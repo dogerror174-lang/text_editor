@@ -17,3 +17,18 @@ private:
         
         std::string result = text;
         int distortPercent = 30; // Процент искаженных символов
+// Искажаем случайные символы
+        for (size_t i = 0; i < result.length(); i++) {
+        if (rand() % 100 < distortPercent) {
+                // Заменяем символ на случайный
+                if (isalpha(result[i])) {
+                    if (isupper(result[i])) {
+                        result[i] = 'A' + rand() % 26;
+                    } else {
+                        result[i] = 'a' + rand() % 26;
+                    }
+                } else if (isdigit(result[i])) {
+                    result[i] = '0' + rand() % 10;
+                }
+            }
+        }
