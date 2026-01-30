@@ -1,0 +1,5 @@
+# Компиляция (g++)
+g++ -o text_editor text_editor.cpp -std=c++11
+
+# Запуск
+./text_editor
